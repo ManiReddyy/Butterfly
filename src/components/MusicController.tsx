@@ -33,7 +33,7 @@ const MusicController: React.FC = () => {
         e.g., src="/background-music.mp3" 
       */}
       <audio ref={audioRef} loop>
-        <source src="" type="audio/mpeg" />
+        <source src="/music.mp3" type="audio/mpeg" />
       </audio>
     </>
   );
