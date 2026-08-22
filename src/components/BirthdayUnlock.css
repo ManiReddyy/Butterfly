@@ -1,0 +1,32 @@
+.unlock-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: var(--bg-cream); /* Light text on dark bg */
+  z-index: 50;
+  overflow: hidden;
+}
+
+.unlock-text {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  opacity: 0;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #FDFBF7;
+}
+
+@media (max-width: 768px) {
+  .unlock-text {
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
+}

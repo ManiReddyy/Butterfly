@@ -1,0 +1,312 @@
+.letter-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-cream);
+  z-index: 20;
+}
+
+.envelope-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f4e8d8;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  perspective: 1000px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 100px solid #eaddcc;
+  z-index: 4;
+  transform-style: preserve-3d;
+}
+
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, #f9f1e6 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-label {
+  position: absolute;
+  bottom: 30px;
+  font-size: 2rem;
+  color: var(--color-dusty-mauve);
+  transform: rotate(-3deg);
+}
+
+.wax-seal {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: #b03a48;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  z-index: 6;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2), inset 0 0 10px rgba(0,0,0,0.2);
+  border: 2px solid #8c2a37;
+}
+
+.stamp {
+  position: absolute;
+  font-size: 2.2rem;
+  z-index: 5;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+.stamp-1 {
+  top: 15px;
+  right: 15px;
+  transform: rotate(12deg);
+}
+
+.stamp-2 {
+  bottom: 25px;
+  left: 20px;
+  transform: rotate(-8deg);
+  font-size: 1.8rem;
+}
+
+.stamp-3 {
+  bottom: 30px;
+  right: 25px;
+  transform: rotate(5deg);
+  font-size: 1.5rem;
+}
+
+.letter {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 280px;
+  height: 400px;
+  background-color: #fff9f0;
+  z-index: 1;
+  opacity: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.letter.fullscreen {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  max-width: 600px;
+  height: auto;
+  min-height: 80vh;
+  opacity: 1;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.letter-content {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  padding: 2rem;
+  text-align: left;
+  max-height: 100%;
+  overflow-y: auto; /* Enable scrolling */
+  position: relative;
+  z-index: 2;
+}
+
+/* Custom scrollbar for letter */
+.letter-content::-webkit-scrollbar {
+  width: 8px;
+}
+.letter-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.letter-content::-webkit-scrollbar-thumb {
+  background: rgba(155, 126, 137, 0.3);
+  border-radius: 4px;
+}
+
+.doodle {
+  position: absolute;
+  opacity: 0.6;
+  pointer-events: none;
+  font-size: 2rem;
+  z-index: 1;
+}
+.doodle-1 { top: 10%; right: 10%; transform: rotate(15deg); }
+.doodle-2 { bottom: 15%; left: 5%; transform: rotate(-20deg); }
+.doodle-3 { top: 50%; right: 5%; transform: rotate(10deg); font-size: 3rem; }
+.doodle-4 { bottom: 5%; right: 15%; transform: rotate(-10deg); }
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.wish-scene-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+.floating-star {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.6;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.5); opacity: 0.8; }
+}
+
+.wish-box-card {
+  width: 90vw;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1), inset 0 0 0 2px rgba(255,255,255,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center;
+}
+
+.wish-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wish-title {
+  font-size: 3rem;
+  color: var(--color-dusty-mauve);
+  text-align: center;
+  margin: 0;
+}
+
+.wish-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wish-textarea {
+  width: 100%;
+  height: 150px;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(224, 196, 204, 0.3) 31px,
+    rgba(224, 196, 204, 0.3) 32px
+  );
+  border: none;
+  font-size: 1.8rem;
+  line-height: 32px;
+  color: var(--color-text);
+  padding: 0 10px;
+  resize: none;
+  outline: none;
+  text-align: center;
+}
+
+.wish-textarea::placeholder {
+  color: rgba(155, 126, 137, 0.5);
+}
+
+.wish-btn {
+  font-size: 1.4rem;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background-color: var(--color-rose);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(219, 148, 166, 0.3);
+}
+
+.wish-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(219, 148, 166, 0.4);
+}
+
+.glowing-wish-ball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8),
+              0 0 40px 20px rgba(219, 148, 166, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .letter.fullscreen {
+    width: 95vw;
+    padding: 20px;
+  }
+  .letter-content p {
+    font-size: 1.2rem;
+  }
+  .wish-prompt {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,146 @@
+.countdown-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-number {
+  font-family: var(--font-display);
+  font-size: 15rem;
+  font-weight: 300;
+  color: var(--color-dusty-mauve);
+  opacity: 0;
+  text-shadow: 0 0 40px rgba(155, 126, 137, 0.2);
+  z-index: 2;
+  position: absolute;
+}
+
+.shards-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shard {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background-color: var(--color-dusty-mauve);
+  opacity: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(155, 126, 137, 0.5);
+}
+
+.countdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.name-title {
+  font-size: 4rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.date-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.waiting-text {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--color-dusty-mauve);
+  line-height: 1.5;
+}
+
+.timer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: var(--font-display);
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.time-value {
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+.time-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  margin-top: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.time-separator {
+  font-size: 3rem;
+  color: var(--color-text-light);
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .intro-number {
+    font-size: 10rem;
+  }
+
+  .name-title {
+    font-size: 2.5rem;
+  }
+
+  .timer-wrapper {
+    gap: 0.5rem;
+  }
+
+  .time-value {
+    font-size: 2.5rem;
+  }
+
+  .time-block {
+    min-width: 60px;
+  }
+}

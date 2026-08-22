@@ -1,0 +1,90 @@
+:root {
+  /* Core Scrapbook/Pastel Colors */
+  --bg-cream: #FDFBF7;
+  --bg-ivory: #FAF9F6;
+  --color-text: #4A403A;
+  --color-text-light: #8A7E75;
+  
+  --color-peach: #FFDAB9;
+  --color-blush: #F8C8DC;
+  --color-rose: #E8B4B8;
+  --color-dusty-mauve: #9B7E89;
+  --color-lavender: #E6E6FA;
+  --color-sage: #D3E0DC;
+  --color-butter: #FFF2CC;
+  
+  /* Fonts */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-cream);
+  color: var(--color-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .display-text {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+.handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Hide scrollbar when Lenis is active or for horizontal scroll */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Background Paper Texture Overlay */
+.paper-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/* Generic Button Style */
+.btn-primary {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-dusty-mauve);
+  background: transparent;
+  color: var(--color-text);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background: var(--color-dusty-mauve);
+  color: var(--bg-cream);
+}

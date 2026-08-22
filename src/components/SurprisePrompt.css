@@ -1,0 +1,66 @@
+.prompt-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A1818;
+  color: var(--bg-cream);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.prompt-question {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 4rem;
+  letter-spacing: 0.05em;
+}
+
+.prompt-buttons {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-buttons .btn-primary {
+  border-color: rgba(253, 251, 247, 0.3);
+  color: var(--bg-cream);
+}
+
+.prompt-buttons .btn-primary:hover {
+  background: var(--bg-cream);
+  color: #1A1818;
+}
+
+.btn-no {
+  position: relative;
+  /* Will be controlled by GSAP inline styles */
+}
+
+.prompt-message {
+  position: absolute;
+  bottom: 20%;
+  font-size: 2.5rem;
+  color: var(--color-peach);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .prompt-question {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .prompt-buttons {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
