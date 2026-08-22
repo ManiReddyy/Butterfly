@@ -3,7 +3,7 @@ export const birthdayConfig = {
   birthday: "23 August 2026",
   age: 20,
   // Set this to a past date for testing, then change back to "2026-08-23T10:00:00+05:30"
-  targetTimestamp: "2026-08-23T01:50:00+05:30",
+  targetTimestamp: "2026-08-23T10:00:00+05:30",
 
   signature: "— from your idiot bestie",
 
